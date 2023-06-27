@@ -14,7 +14,7 @@ export function Home() {
           <Container fluid className="align-items center">
             <Row className="align-items-center">
               <Col>
-                <h1>Commissions</h1>
+                <h1 className="homeTitle">Hannah's Commissions</h1>
               </Col>
             </Row>
             <Row className="align-items-center">

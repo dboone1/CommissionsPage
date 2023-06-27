@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway|Sacramento');
 
+@import url('https://fonts.cdnfonts.com/css/retrowave');
+
+
 @font-face {
   font-family: 'Rocher';
   size-adjust: 630%;
   src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+  word-wrap: break-word;
 }
 
 
@@ -13,6 +17,32 @@
 
 html{
   height: 100%;
+}
+
+.homeTitle{
+  font-family: 'Retrowave', cursive, 'Times New Roman';
+  font-size: 100px;
+  color: #d112a4;
+}
+
+
+.chooseOne{
+  font-family:  cursive, 'Times New Roman', Times, serif;
+  font-style: italic;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px rgb(232, 52, 118),
+      0 0 82px rgb(232, 52, 118),
+      0 0 92px rgb(232, 52, 118),
+      0 0 102px rgb(232, 52, 118),
+      0 0 151px rgb(232, 52, 118);
+  
+  
 }
 
 .card-title{
@@ -105,8 +135,38 @@ button{
     text-align: center;
     width: 100%;
   }
+
+  .menu{
+     font-size: 6px;
+     text-align: center;
+     height: 40vh;
+     justify-content: center;
+     width: 100% !important;
+     margin-top: 20px;
+  }
+
+  .col{
+    width: 100%;
+    height: 33%;
+  }
+
+  
+
+
+
+  .col{
+    margin-right: 30px;
+  }
+  
+
+
+  .homeTitle{
+    font-size: 62px;
+  }
   
 }
+
+
 
 .card-img{
   height: 200px;
@@ -148,6 +208,10 @@ button{
 
   #back{
     font-size: 30px !important;
+  }
+
+  .chooseOne{
+    font-size: 40px !important;
   }
 }
 
@@ -217,12 +281,7 @@ button:hover{
   
 }
   
-h1{
-  margin:auto;
-  width: 450px;
-  color: #581019;
-  background: #de5563;
-}
+
 
 h2{
   background: #741a47;
@@ -258,6 +317,7 @@ h2{
   text-decoration: none;
   transition: background-color 1s;
   place-content: center;
+  
 }
 
 

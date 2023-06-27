@@ -1,13 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Col, Row, Figure, Card, Form, Button} from 'react-bootstrap'
 import './App.css';
+import './App.js';
 import catImg from './images/catBackground.jpg'
 import dogImg from './images/dog33.jpg'
 import{useState} from 'react'
-import{Link} from 'react-router-dom'
+import {Routes, Route, Link, redirect} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCirclePlus, faCircleCheck, faCircleArrowLeft, faCircleArrowRight} from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
+import spaceBackground from './images/space-background.jpg'
 
  export function Menu(){
 
@@ -15,6 +17,12 @@ import React from 'react'
     const [checked, setChecked] = useState(false);
     const [NSFW, setNSFW] = useState(false);
     const [letter, setLetter] = useState("");
+
+    const [artObject, setArtObject] = useState({
+        artType : artStyle,
+        NSFW : NSFW,
+        checked : checked
+    })
     
 
     const buttonRender = (style) =>{
@@ -65,11 +73,22 @@ import React from 'react'
         }
     }
 
+    const handleSubmit = () => {
+        setArtObject(artStyle, NSFW, checked);
+        
+    }
+
+    
+    
     
     return (
         <>
-        <Container fluid style={{padding: '40px'}}>
-           
+        <Container fluid style={{padding: '40px', backgroundImage: `url(${spaceBackground})`}}>
+            <Row>
+            <Col lg={4} className="d-none d-sm-block" ></Col>
+            <Col lg={2} xs={12}>
+                <p className="chooseOne">Choose One</p></Col>
+            </Row>
             <Row className="menuRow" xs={1} md={6} lg={6} style={{gap: '10px'}}>
                 
                 <Col className="card-background text-wrap overflow-auto">
@@ -145,7 +164,11 @@ import React from 'react'
             </Col>
             <Col lg={1} className="d-none d-sm-block"></Col>
             <Col lg={2} xs={6}>
-            <Button disabled= {!checked} id="continue" style={{width: '90%'}} variant="primary">Request<FontAwesomeIcon icon={faCircleArrowRight} style={{color: "#f02889",}} /></Button>
+            <Link to="/request" state={{artObject: NSFW, artStyle, checked}}> 
+                <Button disabled= {!checked} id="continue" onClick={() => handleSubmit()}  style={{width: '90%'}} variant="primary">
+                    Request<FontAwesomeIcon icon={faCircleArrowRight} style={{color: "#f02889",}} />
+                </Button>
+            </Link>
             </Col>
         
 
