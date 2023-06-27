@@ -1,5 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Sacramento');
+
+@font-face {
+  font-family: 'Rocher';
+  size-adjust: 630%;
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+
+.container-fluid{
+  overflow: auto;
+}
+
+html{
+  height: 100%;
+}
+
+.card-title{
+  text-align: center;
+  font-weight: bold; 
+  color: yellow;
+  font-style: oblique;
+  font-size: 40px;
+}
+
+.card-text{
+  color: rgba(255, 255, 255, 0.778);
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+}
+
 .App {
   text-align: center;
+}
+
+
+.menuRow{
+  height: auto;
+  
+}
+
+.card-img-top{
+  height: 70%;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .App-logo {
@@ -14,25 +57,289 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  
+  border: 1px solid #6b0964;
+}
+
+.container{
+  max-width: 100%;
+  min-width: 100%;
+}
+
+
+
+button{
+  padding-bottom: 10px;
+}
+
+.card-footer{
+  text-align:center;
+}
+
+.card-text {
+  font-size: 30px;
+}
+/*mobile devices*/
+@media all and (max-width: 769px){
+  
+  .card-text {
+    font-size: 20px;
+  }
+
+  div.card-title{
+    font-size: 25px;
+  }
+
+  .menuRow{
+    height: 100%;
+  }
+  .card-img-top{
+    height: 250px;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  .card-body{
+    text-align: center;
+    width: 100%;
+  }
+  
+}
+
+.card-img{
+  height: 200px;
+}
+
+/*tablets*/
+@media all and (max-width:1089px){
+  .menuRow{
+  min-height: 80vh;
+  }
+}
+/*very small phones*/
+@media only all and (max-width: 307px){
+  button{
+    font-size: 18px;
+  }
+}
+
+@media only screen and  (min-width: 1010px) and (max-width: 1591px){
+  .nsfwSize{
+    font-size-adjust: .8;
+  }
+
+  
+}
+
+/*desktop*/
+@media all and (min-width:1090px){
+  .menuRow{
+    min-height: 80vh; 
+  }
+  .card-title{
+    font-size: 26px !important;
+  }
+
+  #continue{
+    font-size: 30px !important;
+  }
+
+  #back{
+    font-size: 30px !important;
+  }
+}
+
+
+.optional{
+  font-size: 14px;
+}
+
+
+/*viewport that overflows*/
+@media only screen and (min-width: 424px) and (max-width: 767px){
+  .card-body{
+    height: 40%;
+  }
+  .card-img-top{ 
+    height: 60%;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 991px){
+  #continue{
+    margin-top: 20px;
+  }
+}
+
+/*viewport that overflows 2*/
+@media only screen and (min-width: 768px) and (max-width: 1009px){
+  .menuRow{
+    min-height: 70vh !important;
+  }
+  
+  div.card-background{
+    height: 40vh;
+    width: 250px;
+  }
+  .navRow{
+    flex-wrap: none;
+  }
+}
+
+
+
+button:hover{
+  filter: brightness(200%) saturate(80%);
+}
+
+.btn.btn-primary[disabled] {
+  background-color: rgb(134, 133, 133);
+}
+
+#mascot{
+  align-self: flex-end;
+}
+
+#back{
+  
+  text-align: center;
+  border-radius: 25px;
+  font-size: 20px;
+  
+}
+
+#continue{
+  text-align: center;
+  border-radius: 25px;
+  font-size: 20px;
+  
+}
+  
+h1{
+  margin:auto;
+  width: 450px;
+  color: #581019;
+  background: #de5563;
+}
+
+h2{
+  background: #741a47;
+  float: right;
+  color:  #581019;
+  width: 250px;
+}
+
+
+.menu{
+  font-family: 'Rocher';
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.card-background{
+  background: linear-gradient(to right, rgb(248, 22, 142) 0%,#2fa55c 50%,transparent, transparent);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-textbox {
+  background: linear-gradient(315deg, #05e8ba 0%, #087ee1 74%);
 }
+
+
+
+.cardColor{
+  background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
+  font-family: cursive, 'Times New Roman', Times, serif;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 1s;
+  place-content: center;
+}
+
+
+
+.cardColor:hover, .cardColor:focus{
+  background-color: #e91e63;
+  color: #fff;
+}
+
+.nsfw-body{
+  background-color: black;
+  color: #fff;
+}
+
+.card-footer{
+  padding: none !important;
+  border-top: none !important;
+  background-color: transparent !important;
+}
+
+.navRow{
+  text-align: center;
+  margin-top: 20px !important;
+}
+
+
+
+button{
+  background: none;
+  border: none;
+}
+
+@font-palette-values --Grays {
+  font-family: Rocher;
+  base-palette: 1;
+}
+
+@font-palette-values --Purples {
+  font-family: Rocher;
+  base-palette: 7;
+}
+
+@font-palette-values --Mint {
+  font-family: Rocher;
+  base-palette: 4;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.ul-space{
+  margin-top: 120px;
+}
+
+a, u {
+  text-decoration: none !important;
+}
+
+.grays {
+  font-palette: --Grays;
+}
+
+.purples {
+  font-palette: --Purples;
+}
+
+.mint {
+  font-palette: --Mint;
+}
+
+
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+label:hover{
+  cursor: pointer
+}
+
+
+
