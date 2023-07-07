@@ -43,3 +43,14 @@ textarea {
   font-weight:700;
 }
 [type="submit"]:hover { background:#CC4949; }
+
+.stateData{
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  background: none;
+}
+
+input[type="submit"]:disabled {
+  background: #ccc;
+}

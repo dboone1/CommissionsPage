@@ -281,7 +281,12 @@ button:hover{
   
 }
   
-
+.props{
+  float: left !important;
+  background: none;
+  color: white;
+  width: auto;
+}
 
 h2{
   background: #741a47;

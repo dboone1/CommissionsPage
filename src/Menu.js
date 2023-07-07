@@ -16,13 +16,18 @@ import spaceBackground from './images/space-background.jpg'
     const [artStyle, setArtStyle] = useState("");
     const [checked, setChecked] = useState(false);
     const [NSFW, setNSFW] = useState(false);
-    const [letter, setLetter] = useState("");
+    const [price, setPrice] = useState(0);
 
-    const [artObject, setArtObject] = useState({
-        artType : artStyle,
-        NSFW : NSFW,
-        checked : checked
-    })
+    const prices = {
+        'chibi' : 10,
+        'line art': 10,
+        'portrait': 20,
+        'full body': 40
+    }
+
+    
+
+    
     
 
     const buttonRender = (style) =>{
@@ -73,14 +78,7 @@ import spaceBackground from './images/space-background.jpg'
         }
     }
 
-    const handleSubmit = () => {
-        setArtObject(artStyle, NSFW, checked);
-        
-    }
 
-    
-    
-    
     return (
         <>
         <Container fluid style={{padding: '40px', backgroundImage: `url(${spaceBackground})`}}>
@@ -164,8 +162,8 @@ import spaceBackground from './images/space-background.jpg'
             </Col>
             <Col lg={1} className="d-none d-sm-block"></Col>
             <Col lg={2} xs={6}>
-            <Link to="/request" state={{artObject: NSFW, artStyle, checked}}> 
-                <Button disabled= {!checked} id="continue" onClick={() => handleSubmit()}  style={{width: '90%'}} variant="primary">
+            <Link style={{pointerEvents: checked ? '' : 'none'}}  to="/request" state={{NSFW: NSFW, artStyle: artStyle, checked: checked, price: NSFW ? prices[artStyle] * 2 : prices[artStyle]}}> 
+                <Button disabled= {!checked} id="continue" style={{width: '90%'}} variant="primary">
                     Request<FontAwesomeIcon icon={faCircleArrowRight} style={{color: "#f02889",}} />
                 </Button>
             </Link>
