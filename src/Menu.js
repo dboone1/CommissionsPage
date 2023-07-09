@@ -115,7 +115,7 @@ import spaceBackground from './images/space-background.jpg'
                     <Card className="h-100">
                         <Card.Img variant="top" src={catImg}/>
                         <Card.Body className="cardColor"  style={{backgroundColor: useRadient('portrait') &&  '#e91e63'}}>
-                            <Card.Title style={{fontWeight: 'bold' }}>Half Body</Card.Title>
+                            <Card.Title style={{fontWeight: 'bold' }}>Portrait</Card.Title>
                             <Card.Text>20$</Card.Text>
                             <Card.Text className="text-end">
                             <button onClick={() => changeStyle('portrait')}>{buttonRender('portrait')}</button>

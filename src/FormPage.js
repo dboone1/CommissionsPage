@@ -1,6 +1,7 @@
 
 import {useLocation, Redirect} from 'react-router-dom';
 import {useRef} from 'react'
+import {Helmet} from 'react-helmet';
 import './Form.css';
 
 
@@ -11,13 +12,11 @@ export function FormPage(props){
     
     const data = location.state;
 
-    const sendEmail = () => {
-
-    }
-
     const form = useRef();
     return (
-        <form>
+        <>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="83817b2d-df89-46bf-a8df-4bc0f929cef6"/>
             <h2 className="stateData" style={{float: 'left', color: 'white'}}>Art Style - {data.artStyle}</h2>
             <br/>
             <h2 className="stateData" style={{float: 'left',  color: 'white'}}>Price - {data.price}$</h2>
@@ -33,5 +32,11 @@ export function FormPage(props){
             <textarea name="text" className="feedback-input" placeholder="Tell me in detail what you desire"></textarea>
             <input type="submit" value="SUBMIT"/>
         </form>
+
+        <Helmet>
+        <script src="https://web3forms.com/client/script.js" async defer></script>
+        </Helmet>
+        </>
+        
     )
 }
