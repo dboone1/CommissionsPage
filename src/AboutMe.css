@@ -75,3 +75,76 @@ span{
         transform: scale(0.7);
     }
 }
+
+@media all and (max-width: 805px){
+    .about{
+        height: auto; 
+        overflow-y:scroll;
+        
+        min-width: 0;
+        padding: 0 !important;
+    }
+
+    .about-main{
+        justify-content: center !important;
+        max-width: 95%;
+    }
+
+
+    .bodyAboutMe{
+        min-height: 100vh;
+        min-width: 0;
+        height: 100vh;
+    }
+
+    .buttonAboutMe{
+        width: 50%;
+        margin: auto;
+    }
+    
+    .about img{
+        transform: scale(0.6);
+        flex-basis: 100%; 
+    }
+
+    .img1{
+        height: 450px;
+    }
+
+    .img1 img{
+        width: 400px;
+    }
+
+    .about-text{
+        display: flex;
+        width: 100%;
+        
+    }
+
+    
+
+    .about-text p{
+        width: 100%;
+        
+    }
+
+    section{
+        display: flex !important;
+    }
+
+    .about-text{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .about-text h1{
+        font-size: 40px;
+        
+        align-self: center;
+    }
+    .about-main{
+        justify-content: center !important;
+        flex-direction: column;
+    }
+
+}

@@ -9,6 +9,7 @@ import { Home } from "./Home"
 import {Menu} from "./Menu"
 import { FormPage } from './FormPage';
 import { AboutMe } from './AboutMe';
+import {FAQ} from './FAQ';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/menu" element={<Menu/>}/> 
       <Route path="/request" element={<FormPage/>}/>
       <Route path="/aboutme" element={<AboutMe/>}/>
+      <Route path="/faq" element={<FAQ/>}/>
     </Routes>
   );
 }

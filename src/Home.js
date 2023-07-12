@@ -22,7 +22,7 @@ export function Home() {
                 <ul className="menu">
                   <li className="grays ul-space"><Link to="/menu">Menu</Link></li>
                   <li className="purples ul-space"><Link to="/aboutme">About me</Link></li>
-                  <li className="mint ul-space">F.A.Q</li>
+                  <li className="mint ul-space"><Link to="/FAQ">F.A.Q</Link></li>
                 </ul>
               </Col>
             </Row>

@@ -16,7 +16,7 @@ import spaceBackground from './images/space-background.jpg'
     const [artStyle, setArtStyle] = useState("");
     const [checked, setChecked] = useState(false);
     const [NSFW, setNSFW] = useState(false);
-    const [price, setPrice] = useState(0);
+    
 
     const prices = {
         'chibi' : 10,
