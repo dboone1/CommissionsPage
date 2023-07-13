@@ -1,7 +1,8 @@
 
-import {useLocation, Navigate} from 'react-router-dom';
-import {useRef, useEffect} from 'react'
+import {useLocation, Navigate, useNavigate, redirect} from 'react-router-dom';
+import {useRef, useEffect, useLayoutEffect} from 'react'
 import {Helmet} from 'react-helmet';
+import { ErrorBoundary, useErrorBoundary, FallbackProps} from "react-error-boundary";
 import './Form.css';
 
 
@@ -11,23 +12,19 @@ export function FormPage(props){
     console.log(props, " props")
     console.log(location, " useLocation Hook");
 
+    
     const data = location.state;
 
-    {/*const redirectPage = () =>{
-        if(Object.values(data).length === 0){
-            <Navigate to="/" replace={true} />
-        }
+    const backToMenu = () =>{
+            return (redirect ("/"));
     }
-
-    useEffect(() =>{
-        redirectPage()
-    }, [redirectPage]
-    */}
     
 
-    const form = useRef();
     return (
-        <>
+        <ErrorBoundary FallbackComponent={backToMenu}
+         onError={() => console.log("Error happened!")}
+        >
+        
         <form action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="83817b2d-df89-46bf-a8df-4bc0f929cef6"/>
             <h2 className="stateData" style={{float: 'left', color: 'white'}}>Art Style - {data.artStyle}</h2>
@@ -49,7 +46,9 @@ export function FormPage(props){
         <Helmet>
         <script src="https://web3forms.com/client/script.js" async defer></script>
         </Helmet>
-        </>
         
-    )
+        </ErrorBoundary>
+
+    );
+    
 }
