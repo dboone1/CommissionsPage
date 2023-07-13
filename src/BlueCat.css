@@ -1,28 +1,38 @@
-.cat {
-    background-color: #f19b1a;
+
+
+.blueCat {
+    display: flex;
+    background-color: #1a9ff1;
     height: 65px;
     width: 80px;
     border-radius: 0 80px 80px 0;
-    position: absolute;
-    bottom: 60px;
-    right: 50px;
+    
+    position: relative;
+    margin: 0 auto;
+    margin-top: 90px;
+    transform: scale(0.8);
+    left: 40px;
 }
-.cat:hover{
+
+.blueCat:hover{
     opacity:0; 
     filter:alpha(opacity=0);
 }
-.ear {
+
+
+.blueEar {
     height: 15px;
     width: 15px;
-    background-color: #f19b1a;
+    background-color: #1a9ff1;
     position: absolute;
     bottom: 64px;
     left: 8px;
     border-radius: 20px 0 0 0;
-    box-shadow: 25px 0 #f19b1a;
+    box-shadow: 25px 0 #1a9ff1;
+
 }
-.eye,
-.eye:before {
+.blueEye,
+.blueEye:before {
     height: 7px;
     width: 10px;
     border: 2px solid #2c2c2c;
@@ -30,15 +40,15 @@
     border-radius: 0 0 15px 15px;
     border-top: none;
 }
-.eye {
+.blueEye {
     top: 18px;
     left: 15px;
 }
-.eye:before {
+.blueEye:before {
     content: "";
     left: 30px;
 }
-.nose {
+.blueNose {
     background-color: #ffffff;
     height: 12px;
     width: 12px;
@@ -48,7 +58,7 @@
     left: 25px;
     box-shadow: 12px 0 #ffffff;
 }
-.nose:before {
+.blueNose:before {
     content: "";
     width: 12px;
     height: 8px;
@@ -56,18 +66,18 @@
     background-color: #ffffff;
     left: 6px;
 }
-.nose:after {
+.blueNose:after {
     content: "";
     position: absolute;
     height: 0;
     width: 0;
-    border-top: 8px solid #ef926b;
+    border-top: 8px solid #40bfd0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     bottom: 7px;
     left: 6px;
 }
-.mouth {
+.blueMouth {
     background-color: #2c2c2c;
     height: 15px;
     width: 17px;
@@ -83,8 +93,8 @@
         transform: scaleY(0.7);
     }
 }
-.body {
-    background-color: #f19b1a;
+.blueBody {
+    background-color: #1a9ff1;
     height: 90px;
     width: 140px;
     position: absolute;
@@ -99,8 +109,8 @@
         transform: scale(0.9, 1.05);
     }
 }
-.tail {
-    background-color: #d07219;
+.blueTail {
+    background-color: #1a9ff1;;
     height: 20px;
     width: 100px;
     position: absolute;
@@ -108,7 +118,7 @@
     bottom: 0;
     border-radius: 20px 0 0 20px;
 }
-.body:before {
+.blueBody:before {
     content: "";
     position: absolute;
     background-color: #ffffff;

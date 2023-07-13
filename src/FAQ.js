@@ -3,6 +3,9 @@ import "./FAQ.css"
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCirclePlus, faCircleMinus, faCircleArrowLeft, faCircleArrowRight} from '@fortawesome/free-solid-svg-icons'
+import {Link} from 'react-router-dom'
+import {Button} from 'react-bootstrap'
+import { Cat } from './BlueCat.js';
 
  export function FAQ(){
  
@@ -32,7 +35,11 @@ import { faCirclePlus, faCircleMinus, faCircleArrowLeft, faCircleArrowRight} fro
 
     const accordionStyles = {
         maxWidth: "600px",
+        margin: '0 auto'
+
     }
+
+    
 
     const accordionTitleStyles = {
         display: 'flex',
@@ -40,29 +47,35 @@ import { faCirclePlus, faCircleMinus, faCircleArrowLeft, faCircleArrowRight} fro
         cursor: 'pointer',
         padding: '5px',
         background: '#21aeca',
+        borderRadius: '15px',
+        lineHeight: '50px',
+        fontSize: '2em',
+        marginBottom: '20px'
     };
 
     const accordionContentStyles = {
         padding: '5px',
-        background: '#39b9b2'
+        background: '#39b9b2',
+        marginBottom: '22px',
+        borderRadius: '15px',
+        lineHeight:'45px',
+        fontSize: '1.8em'
+        
     }
-
-    
 
     const AccordionSection = ({section, isActiveSection, setActiveIndex, sectionIndex}) => {
         const toggleSection = () =>{
             const nextIndex = isActiveSection ? null : sectionIndex
             setActiveIndex(nextIndex);
         }
-        
+
         return (
             <div>
                 <div>
-                    <div style={accordionTitleStyles} onClick={toggleSection}>
-                        {section.title}</div>
-                    <div>{isActiveSection ? "-" : "+"}</div>
+                    <div style={accordionTitleStyles} className="brighten" onClick={toggleSection}>
+                        {section.title} <div>{isActiveSection ? <FontAwesomeIcon icon={faCircleMinus}/> : <FontAwesomeIcon icon={faCirclePlus}/>}</div></div>
                 </div>
-                {isActiveSection && <div style={accordionContentStyles}>{section.content}</div>}
+                {isActiveSection && <div style={accordionContentStyles} className="brighten">{section.content}</div>}
             </div>
         );
     }
@@ -90,13 +103,14 @@ import { faCirclePlus, faCircleMinus, faCircleArrowLeft, faCircleArrowRight} fro
         <>
         <div className="container">
             <div>
-                <span className="accordion__title">Frequently asked questions</span>
+                <span className="accordionTitle">FAQ</span>
                 <h1 className="first">Lets answer some of your questions</h1>
                 <Accordion sections={accordionData}/>
             </div>
             <div>
-               
+            <Link to="/"><Button id="back" className="faqButton">Go Back <FontAwesomeIcon icon={faCircleArrowLeft}/></Button></Link>
             </div>
+            <Cat/>
         </div>
         </>  
     );

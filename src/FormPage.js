@@ -1,16 +1,29 @@
 
-import {useLocation, Redirect} from 'react-router-dom';
-import {useRef} from 'react'
+import {useLocation, Navigate} from 'react-router-dom';
+import {useRef, useEffect} from 'react'
 import {Helmet} from 'react-helmet';
 import './Form.css';
+
 
 
 export function FormPage(props){
     const location = useLocation();
     console.log(props, " props")
     console.log(location, " useLocation Hook");
-    
+
     const data = location.state;
+
+    {/*const redirectPage = () =>{
+        if(Object.values(data).length === 0){
+            <Navigate to="/" replace={true} />
+        }
+    }
+
+    useEffect(() =>{
+        redirectPage()
+    }, [redirectPage]
+    */}
+    
 
     const form = useRef();
     return (

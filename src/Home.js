@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import './Cat'
+import './Cat.css';
 import backgroundImg from './images/background.jpg'
 
 import { Row, Col, Container } from 'react-bootstrap';
-import { Cat } from './Cat';
+import { Cat } from './Cat.js';
 import { Link, Outlet } from 'react-router-dom'
 export function Home() {
   return (
